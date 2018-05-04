@@ -33,12 +33,12 @@ namespace HairSalon.Models
       cmd.CommandText = @"INSERT INTO `stylists` (`id`,`name`) VALUES (@ItemId, @ItemName)";
 
       MySqlParameter id = new MySqlParameter();
-      id.ParameterName = "@ItemName";
+      id.ParameterName = "@ItemId";
       id.Value = this._id;
       cmd.Parameters.Add(id);
 
       MySqlParameter name = new MySqlParameter();
-      name.ParameterName = "@ItemId";
+      name.ParameterName = "@ItemName";
       name.Value = this._name;
       cmd.Parameters.Add(name);
 
