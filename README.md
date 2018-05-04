@@ -3,7 +3,7 @@
 #### Date: 05/4/18
 
 ##### Description
-_This web applications allows users to create a todo lists_
+_This web applications allows users to see a hair salon page_
 
 ##### Setup/Installation Requirements
 * .NET
