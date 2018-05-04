@@ -17,7 +17,6 @@ namespace HairSalon.Tests
       List<Stylist> StylistsList = Stylist.GetAllStylists();
       Assert.AreEqual("Kayle", StylistsList[0].GetName());
     }
-
     [TestMethod]
     public void TestFindStylist()
     {
@@ -33,6 +32,14 @@ namespace HairSalon.Tests
       myClient.AddClient();
       List<Client> ClientList = Client.GetAllClients();
       Assert.AreEqual("Jack", ClientList[0].GetClientName());
+    }
+    [TestMethod]
+    public void TestFindClient()
+    {
+      Client myClient = new Client("Jack", 1);
+      myClient.AddClient();
+      Client searchedId = Client.FindClient(myClient.GetStylistId());
+      Assert.AreEqual("Jack", searchedId.GetClientName());
     }
   }
 }
