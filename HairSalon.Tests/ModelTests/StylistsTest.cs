@@ -41,5 +41,13 @@ namespace HairSalon.Tests
       Client searchedId = Client.FindClient(myClient.GetStylistId());
       Assert.AreEqual("Jack", searchedId.GetClientName());
     }
+    [TestMethod]
+    public void TestDatabaseRelation()
+    {
+      Stylist Kayla = Stylist.FindStylist(2);
+      Console.WriteLine( "Stylist: " + Kayla.GetName());
+      Client Joe = Client.FindClient(Kayla.GetId());
+      Assert.AreEqual("Joe", Joe.GetClientName());
+    }
   }
 }
