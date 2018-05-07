@@ -105,5 +105,10 @@ namespace HairSalon.Models
       }
       return myStylist;
     }
+
+    public override int GetHashCode()
+    {
+         return this.GetName().GetHashCode();
+    }
   }
 }
