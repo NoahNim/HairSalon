@@ -13,9 +13,9 @@
       @if (Model.Count != null)
       {
         <ul>
-          @foreach (var stylists in Model)
+          @foreach (var stylist in Model)
           {
-            <a href="/stylists/@stylists.GetId()"><li>@stylists.GetName()</li></a>
+            <a href="/stylists/@stylist.GetId()"><li>@stylist.GetName()</li></a>
           }
         </ul>
       }

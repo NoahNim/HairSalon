@@ -23,7 +23,7 @@ namespace HairSalon.Tests
       Stylist myStylist = new Stylist(1, "Kayla");
       myStylist.AddStylist();
       Stylist searchedId = Stylist.FindStylist(myStylist.GetId());
-      Assert.AreEqual("Kayle", searchedId.GetName());
+      Assert.AreEqual("Kayla", searchedId.GetName());
     }
     [TestMethod]
     public void TestAddClient()

@@ -31,7 +31,7 @@ namespace HairSalon.Controllers
      public ActionResult StylistInfo(int id)
      {
          Stylist thisStylist = Stylist.FindStylist(id);
-         return View(thisStylist);
+         return View("StylistInfo", thisStylist);
      }
   }
 }
