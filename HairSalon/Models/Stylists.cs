@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using HairSalon;
 
@@ -30,7 +31,7 @@ namespace HairSalon.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"INSERT INTO `stylists` (`id`,`name`) VALUES (@ItemId, @ItemName);";
+      cmd.CommandText = @"INSERT INTO stylists (id, name) VALUES (@ItemId, @ItemName);";
 
       MySqlParameter id = new MySqlParameter();
       id.ParameterName = "@ItemId";
