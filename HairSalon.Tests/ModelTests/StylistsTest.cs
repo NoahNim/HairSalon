@@ -7,8 +7,17 @@ using HairSalon.Models;
 namespace HairSalon.Tests
 {
   [TestClass]
-  public class StylistTest
+  public class StylistTest :IDisposable
   {
+    public StylistTest()
+    {
+      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=noah_medoff_test;";
+    }
+    public void Dispose()
+    {
+        Stylist.DeleteAll();
+        Client.DeleteAll();
+    }
     [TestMethod]
     public void TestStylistCreation()
     {

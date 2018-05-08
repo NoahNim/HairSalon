@@ -30,7 +30,7 @@ namespace HairSalon.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"INSERT INTO `stylists` (`id`,`name`) VALUES (@ItemId, @ItemName)";
+      cmd.CommandText = @"INSERT INTO `stylists` (`id`,`name`) VALUES (@ItemId, @ItemName);";
 
       MySqlParameter id = new MySqlParameter();
       id.ParameterName = "@ItemId";
@@ -77,7 +77,7 @@ namespace HairSalon.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"SELECT FROM stylists WHERE id = (@searchId)";
+      cmd.CommandText = @"SELECT FROM stylists WHERE id = @searchId;";
 
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
@@ -105,7 +105,19 @@ namespace HairSalon.Models
       }
       return myStylist;
     }
-
+    public static void DeleteAll()
+  {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM stylists;";
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+          conn.Dispose();
+      }
+  }
     public override int GetHashCode()
     {
          return this.GetName().GetHashCode();
